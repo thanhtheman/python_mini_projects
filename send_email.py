@@ -11,13 +11,14 @@ email_sender = os.getenv("SENDER_EMAIL")
 password = os.getenv("GMAIL_PASSWORD")
 email_receiver = os.getenv("RECEIVER_EMAIL")
 subject = "Sending Email With Python"
-body = """You can learn how to send email with Python on FreeCodeCamp. It's easy!"""
+body = "Take a tutorial from freecodecamp, learn it piece by piece, break it down to the core \n Take your time, just learn it step by step."
 
-em = EmailMessage()
-em['From'] = email_sender
-em['To'] = email_receiver
-em['subject'] = subject
-em.set_content(body)
+
+email = EmailMessage()
+email['From'] = email_sender
+email['To'] = email_receiver
+email['Subject'] = subject
+email.set_content(body)
 
 #ecrypt email context with ssl (secure sockets layer)
 context = ssl.create_default_context()
@@ -25,7 +26,7 @@ context = ssl.create_default_context()
 # using simple mail transfer protocol to communicate with Gmail server
 with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
     smtp.login(email_sender, password)
-    smtp.sendmail(email_sender, email_receiver, em.as_string())
+    smtp.sendmail(email_sender, email_receiver, email.as_string())
 
 
 
