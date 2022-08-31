@@ -8,6 +8,7 @@ This project enables us to send email without logging in Gmail as normally
 2. Basic Calculator
 This is a basic calculator in which a user can perform add, multiple, minus and divide.
 
-3. Email Slicer
-This project enables us to split an email into 3 parts: username, domain and extention
-It can be implemented as a 1-step account creation for simplicity. 
+3. 1-Step Account Creation
+This project enables us to quickly create an account for a user: username and password(randomly generated)
+just by asking for the user's email.
+This project can be used for e-commerce business to quickly collect email 
