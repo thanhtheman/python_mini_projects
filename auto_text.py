@@ -2,6 +2,8 @@ from dotenv import load_dotenv
 import os
 import random
 from twilio.rest import Client
+import schedule
+import time
 
 load_dotenv()
 
@@ -36,11 +38,12 @@ def send_message():
 
     print(message.sid)
 
+
 send_message()
 
-# schedule.every(1).minutes.do(send_message)
+schedule.every().days.at('09:00').do(send_message)
 
-# while True:
-#     schedule.run_pending()
-#     time.sleep(1)
+while True:
+    schedule.run_pending()
+    time.sleep(1)
 
